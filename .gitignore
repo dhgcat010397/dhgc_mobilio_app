@@ -25,3 +25,9 @@ doc/api/
 
 .flutter-plugins
 .flutter-plugins-dependencies
+
+.vscode/
+
+# flutter generate files and folders
+*.g.dart
+*.freezed.dart
