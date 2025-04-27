@@ -1,7 +1,10 @@
 # dhgc_mobilio_app
-Mobilio Coding Challege
+Mobilio Coding Challenge
+
+In this project, I used Clean Architecture
 
 Run: "flutter pub get"
+
 Run: "flutter pub run build_runner build --delete-conflicting-outputs" to generate file "product_bloc.freezed.dart"
 
 In "android/app/build.gradle.kts", config:
