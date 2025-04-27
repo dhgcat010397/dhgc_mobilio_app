@@ -50,7 +50,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
 
                       // Display the product name in a larger font size and bold
                       Text(
-                        product!.name,
+                        product.name,
                         style: Theme.of(context).textTheme.headlineSmall
                             ?.copyWith(fontWeight: FontWeight.bold),
                       ),
