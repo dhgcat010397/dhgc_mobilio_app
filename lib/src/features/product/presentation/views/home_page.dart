@@ -71,28 +71,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-      body: BlocConsumer<ProductBloc, ProductState>(
-        listener: (context, state) {
-          state.maybeWhen(
-            error: (errorCode, errorMessage) {
-              ScaffoldMessenger.of(
-                context,
-              ).showSnackBar(SnackBar(content: Text('Error: $errorMessage')));
-            },
-            orElse: () {
-              // do nothing
-            },
-            loaded: (_, product) {
-              if (product != null) {
-                Navigator.pushNamed(
-                  context,
-                  AppRoutes.productDetail,
-                  arguments: product.id,
-                );
-              }
-            },
-          );
-        },
+      body: BlocBuilder<ProductBloc, ProductState>(
         buildWhen: (previous, current) => previous != current,
         builder: (context, state) {
           return state.when(
@@ -100,7 +79,7 @@ class _HomePageState extends State<HomePage> {
             loading: () => const Center(child: CircularProgressIndicator()),
             loaded: (data, __) {
               final products = data;
-              
+
               if (products.isEmpty) {
                 return const Center(child: Text('No products found'));
               } else {
@@ -111,15 +90,11 @@ class _HomePageState extends State<HomePage> {
 
                     return ProductCard(
                       onTap: () async {
-                        BlocProvider.of<ProductBloc>(
+                        Navigator.pushNamed(
                           context,
-                        ).add(ProductEvent.getProductDetail(product.id));
-
-                        // Navigator.pushNamed(
-                        //   context,
-                        //   AppRoutes.productDetail,
-                        //   arguments: product.id,
-                        // );
+                          AppRoutes.productDetail,
+                          arguments: product.id,
+                        );
                       },
                       name: product.name,
                       price: product.formattedPrice,
