@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:dhgc_mobilio_app/core/navigation/app_routes.dart';
-import 'package:dhgc_mobilio_app/core/navigation/route_generator.dart';
+import 'package:dhgc_mobilio_app/src/core/routes/app_routes.dart';
+import 'package:dhgc_mobilio_app/src/core/routes/route_generator.dart';
 
-import 'package:dhgc_mobilio_app/src/features/product/presentation/bloc/product_bloc.dart';
-import 'package:dhgc_mobilio_app/src/services/dependencies_injection.dart'
+import 'package:dhgc_mobilio_app/src/features/products/presentation/bloc/product_bloc.dart';
+import 'package:dhgc_mobilio_app/src/core/utils/dependencies_injection.dart'
     as di;
-import 'package:dhgc_mobilio_app/src/features/product/presentation/views/home_page.dart';
+import 'package:dhgc_mobilio_app/src/features/products/presentation/views/home_page.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
