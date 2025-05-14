@@ -1,5 +1,6 @@
 # dhgc_mobilio_app
 Mobilio Coding Challenge
+(Prob: "Coding Challenge – Flutter.pdf" in "assets" folder)
 
 In this project, I used Clean Architecture
 
